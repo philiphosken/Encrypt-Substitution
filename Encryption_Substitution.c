@@ -11,19 +11,19 @@ char a;
 char b;
 
 
-FILE *rawmessage;
-rawmessage = fopen("rawmessage.txt", "r");
+FILE *in;
+in = fopen("in.txt", "r");
 
-FILE *encry;
-encry = fopen("encry.txt", "w");
+FILE *out;
+out = fopen("out.txt", "w");
     
-    while (feof(rawmessage) == 0){
-        fscanf(rawmessage, "%c", &m);
+    while (feof(in) == 0){
+        fscanf(in, "%c", &m);
     for (i = 0; i < N; ++i){
         a = alphatxt[i];
         b = subtxt[i];
     if (m == a){
-        fprintf(encry, "%c", b);
+        fprintf(out, "%c", b);
         printf("%c", b);
     } 
        
