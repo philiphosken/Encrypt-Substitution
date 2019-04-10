@@ -2,27 +2,32 @@
 
 int main()
 {
-char alphatxt[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //Text that is to become encrypted
-char subtxt[]=    "QWERTYUIOPASDFGHJKLZXCVBNM";
-char rawmessage[] = "PHIL";
-int y =4;
+char alphatxt[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+char subtxt[]=    "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+char N = 27;
+char m;
+char i;
+char a;
+char b;
 
-int N = 26; //Number of Values in the Array above
-int i; //Counter Index
-int x = 0;
-printf("something went wrong");
 
-for (i = 0 ; i < N ; ++i){
+FILE *rawmessage;
+rawmessage = fopen("rawmessage.txt", "r");
 
-for (x=0 ; x < y ; ++x){
-    while (i < 26){
-        printf("something went wrong");
-if (rawmessage[x] == alphatxt[i]){
-   printf("%c", subtxt[x]);
-  i++;
-} else printf("something went wrong");
+FILE *encry;
+encry = fopen("encry.txt", "w");
+    
+    while (feof(rawmessage) == 0){
+        fscanf(rawmessage, "%c", &m);
+    for (i = 0; i < N; ++i){
+        a = alphatxt[i];
+        b = subtxt[i];
+    if (m == a){
+        fprintf(encry, "%c", b);
+        printf("%c", b);
+    } 
+       
 }
-}
-}
 
+}
 }
